@@ -18,7 +18,7 @@
     app.use(bodyParser.urlencoded({ extended: true }));
 
     // setup mongodb
-    mongoose.connect(config().getConnectionString());
+    mongoose.connect(config.getConnectionString());
 
     // setup dos EndPoints
     todoCtrl(app);
