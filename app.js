@@ -17,6 +17,7 @@ mongoose.connect(config().getConnectionString());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// setup dos EndPoints
 todoCtrl(app);
 
 app.listen(port);

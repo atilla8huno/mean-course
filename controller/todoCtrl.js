@@ -10,8 +10,10 @@ function todoCtrl(app) {
     app.get('/api/todos/:usuario', getTodosPorUsername);
     app.get('/api/todo/:id', getTodoPorId);
     app.post('/api/todo', salvarOuAtualizarTodo);
-    app.get('/api/setup', salvarTodosDefault);
     app.delete('/api/todo/:id', excluirTodoPorId);
+    
+    // setup inicial
+    app.get('/api/setup', salvarTodosDefault);
 }
 
 /**
@@ -19,26 +21,10 @@ function todoCtrl(app) {
  */
 function salvarTodosDefault(request, response) {
     var todosDefault = [
-        {
-            usuario: 'atilla',
-            todo: 'Novo todo 1',
-            finalizado: false
-        },
-        {
-            usuario: 'atilla',
-            todo: 'Novo todo 2',
-            finalizado: false
-        },
-        {
-            usuario: 'atilla',
-            todo: 'Novo todo 3',
-            finalizado: false
-        }, 
-        {
-            usuario: 'atilla',
-            todo: 'Novo todo 4',
-            finalizado: false
-        }
+        { usuario: 'atilla', todo: 'Novo todo 1', finalizado: false },
+        { usuario: 'atilla', todo: 'Novo todo 2', finalizado: false },
+        { usuario: 'atilla', todo: 'Novo todo 3', finalizado: false },
+        { usuario: 'atilla', todo: 'Novo todo 4', finalizado: false }
     ];
     
     Todo.create(todosDefault, function(err, todos) {
