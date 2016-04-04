@@ -10,7 +10,7 @@ app.use('/assets', express.static(__dirname + '/public'));
 
 // setup mongodb
 var port = process.env.PORT || 3000;
-mongoose.connect(config().getConnectionString());
+mongoose.connect(config.getConnectionString());
 
 // setup body-parser
 // Configura os HTTPMessageConverters para consumir e produzir JSON
