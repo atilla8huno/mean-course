@@ -44,6 +44,8 @@ function excluirTodoPorId(request, response) {
         // verifica se houve um problema e dispara a exception
         if (err) throw err;
         
+        console.log('TODO excluído com sucesso!');
+        
         response.send('TODO excluído com sucesso!');
     });
 }
@@ -74,6 +76,8 @@ function salvarTodo(request, response) {
         // verifica se houve um problema e dispara a exception
         if (err) throw err;
         
+        console.log(result);
+        
         response.send('TODO salvo com sucesso!');
     });
 }
@@ -91,6 +95,8 @@ function atualizarTodo(request, response) {
     Todo.findByIdAndUpdate(request.body.id, todo, function(err, result) {
         // verifica se houve um problema e dispara a exception
         if (err) throw err;
+        
+        console.log(result);
         
         response.send('TODO atualizado com sucesso!');
     });
@@ -127,6 +133,8 @@ function getTodosPorUsername(request, response) {
     Todo.find(criteria, function (err, todos) {
         // verifica se houve um problema e dispara a exception
         if (err) throw err;
+        
+        console.log(todos);
         
         response.send(todos);
     });
