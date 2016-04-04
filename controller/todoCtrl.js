@@ -8,15 +8,15 @@
      */
     var Todo = require('../model/todo'); // .js é opcional no require
 
-    function todoCtrl(app) {
+    function todoCtrl(router) {
         // Define os EndPoints
-        app.get('/api/todos/:usuario', getTodosPorUsername);
-        app.get('/api/todo/:id', getTodoPorId);
-        app.post('/api/todo', salvarOuAtualizarTodo);
-        app.delete('/api/todo/:id', excluirTodoPorId);
+        router.get('/api/todos/:usuario', getTodosPorUsername);
+        router.get('/api/todo/:id', getTodoPorId);
+        router.post('/api/todo', salvarOuAtualizarTodo);
+        router.delete('/api/todo/:id', excluirTodoPorId);
         
         // setup inicial
-        app.get('/api/setup', salvarTodosDefault);
+        router.get('/api/setup', salvarTodosDefault);
     }
 
     /**
