@@ -2,10 +2,13 @@
 Fonte do curso de MEAN Stack
 
 Downloads:
-- Download VS Code
-- Download NodeJS
-- Download Git
-- Download MongoDB
+- VS Code
+- NodeJS
+- Git
+
+Contas:
+- GitHub
+- MongoLab
 
 Workspace:
 - npm init
