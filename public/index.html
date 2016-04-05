@@ -43,13 +43,15 @@
                     </p>
                 </div>
                 
-                <button ng-click="listar()" class="btn btn-primary">Listar</button><br/>
+                <button ng-click="listar()" class="btn btn-primary">Listar</button>
                 
-                <p ng-repeat="item in todos" class="col-md-12">
-                    Usuário: <strong ng-bind="item.usuario"></strong>
-                    Todo: <strong ng-bind="item.todo"></strong>
-                    Finalizado: <strong ng-bind="item.finalizado ? 'Sim' : 'Não'"></strong>
-                </p>
+                <div class="row">
+                    <p ng-repeat="item in todos" class="col-md-12">
+                        Usuário: <strong ng-bind="item.usuario"></strong>
+                        Todo: <strong ng-bind="item.todo"></strong>
+                        Finalizado: <strong ng-bind="item.finalizado ? 'Sim' : 'Não'"></strong>
+                    </p>  
+                </div>
             </div>
         </div>
     </body>
