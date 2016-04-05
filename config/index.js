@@ -1,9 +1,18 @@
-var configValues = require('./config');
+(function () {
+    'use strict';
+    
+    var configValues = require('./config');
+    
+    var connection = {
+        getConnectionString: function () {
+            var url = 'mongodb://' + configValues.username + ':' + 
+                configValues.password + '@ds015750.mlab.com:15750/todo-mean-course'; 
+                
+            console.log(url);
+                
+            return url;
+        }
+    };
 
-var connection = {
-    getConnectionString: function getConnectionString(arams) {
-        return 'mongodb://' + configValues.username + ':' + configValues.password + '@ds015750.mlab.com:15750/todo-mean-course';
-    }
-};
-
-module.exports = connection;
+    module.exports = connection;
+})();
