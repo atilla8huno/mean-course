@@ -7,8 +7,8 @@ Downloads:
 - Git
 
 Contas:
-- GitHub
-- MongoLab
+- GitHub (github.com)
+- MongoLab (mlab.com)
 
 Workspace:
 - npm init
