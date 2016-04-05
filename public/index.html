@@ -18,7 +18,8 @@
         
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.1/ui-bootstrap.min.js"></script>-->
         
-        <script src="js/todoApp.js"></script
+        <script src="js/todoApp.js"></script>
+        <script src="js/todoCtrl.js"></script>
     </head>
     <body ng-controller="TodoCtrl">
         <h1>Hello MEAN</h1>
@@ -26,14 +27,17 @@
             AngularJS with NodeJS is awesome!
         </p>
         <div class="row">
-            <p class="text-primary col-md-4">
-                Hi once, {{name}}.
+            <p class="text-primary col-md-3">
+                Hi primary, {{name}}.
             </p>
-            <p class="text-primary col-md-4">
-                Hi twice, {{name}}.
+            <p class="text-warning col-md-3">
+                Hi warning, {{name}}.
             </p>
-            <p class="text-primary col-md-4">
-                Hi three times, {{name}}.
+            <p class="text-success col-md-3">
+                Hi success, {{name}}.
+            </p>
+            <p class="text-danger col-md-3">
+                Hi danger, {{name}}.
             </p>
         </div>
     </body>
