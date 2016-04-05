@@ -3,7 +3,6 @@
     
     // imports
     var express = require('express');
-    var router = express.Router();
     var mongoose = require('mongoose');
     var bodyParser = require('body-parser');
     var config = require('./config');
@@ -12,8 +11,9 @@
     // setup express
     var app = express();
     // setup context-path da aplicação
+    var router = express.Router();
     app.use('/todo-app', router);
-    app.use('/assets', express.static(__dirname + '/public'));
+    router.use('/', express.static(__dirname + '/public'));
 
     // setup body-parser
     // Configura os HTTPMessageConverters para consumir e produzir JSON
