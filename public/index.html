@@ -22,23 +22,35 @@
         <script src="js/todoCtrl.js"></script>
     </head>
     <body ng-controller="TodoCtrl">
-        <h1>Hello MEAN</h1>
-        <p>
-            AngularJS with NodeJS is awesome!
-        </p>
-        <div class="row">
-            <p class="text-primary col-md-3">
-                Hi primary, {{name}}.
-            </p>
-            <p class="text-warning col-md-3">
-                Hi warning, {{name}}.
-            </p>
-            <p class="text-success col-md-3">
-                Hi success, {{name}}.
-            </p>
-            <p class="text-danger col-md-3">
-                Hi danger, {{name}}.
-            </p>
+        <div class="row" style="padding-left: 15px;">
+            <div class="col-md-12">
+                <h1>Hello MEAN</h1>
+                <p>
+                    AngularJS with NodeJS is awesome!
+                </p>
+                <div class="row">
+                    <p class="text-primary col-md-3">
+                        Hi primary, {{name}}.
+                    </p>
+                    <p class="text-warning col-md-3">
+                        Hi warning, {{name}}.
+                    </p>
+                    <p class="text-success col-md-3">
+                        Hi success, {{name}}.
+                    </p>
+                    <p class="text-danger col-md-3">
+                        Hi danger, {{name}}.
+                    </p>
+                </div>
+                
+                <button ng-click="listar()" class="btn btn-primary">Listar</button><br/>
+                
+                <p ng-repeat="item in todos" class="col-md-12">
+                    Usuário: <strong ng-bind="item.usuario"></strong>
+                    Todo: <strong ng-bind="item.todo"></strong>
+                    Finalizado: <strong ng-bind="item.finalizado ? 'Sim' : 'Não'"></strong>
+                </p>
+            </div>
         </div>
     </body>
 </html>
