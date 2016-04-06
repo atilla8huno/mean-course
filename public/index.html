@@ -1,53 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="TodoApp">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <title>Todo App</title>
-        
-        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Todo App</title>
+
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+
+    <script src="js/vendor/jquery-2.2.2.min.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/todoApp.js"></script>
+    <script src="js/todoCtrl.js"></script>
+</head>
+
+<body ng-controller="TodoCtrl">
+    <div class="row" style="padding-left: 15px;">
+        <div class="col-md-12">
+            <h1>Hello MEAN</h1>
+            <p>
+                AngularJS with NodeJS is awesome!
+            </p>
+            <form role="form">
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd">
+                </div>
+                <div class="checkbox">
+                    <label>
+                    <input type="checkbox"> Finalizado</label>
+                </div>
                 
-        <script src="js/vendor/jquery-2.2.2.min.js"></script>
-        <script src="js/vendor/angular.min.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        
-        <script src="js/todoApp.js"></script>
-        <script src="js/todoCtrl.js"></script>
-    </head>
-    <body ng-controller="TodoCtrl">
-        <div class="row" style="padding-left: 15px;">
-            <div class="col-md-12">
-                <h1>Hello MEAN</h1>
-                <p>
-                    AngularJS with NodeJS is awesome!
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+            <button ng-click="listar()" class="btn btn-primary">Listar</button>
+
+            <div class="row">
+                <p ng-repeat="item in todos" class="col-md-12">
+                    Usuário: <strong ng-bind="item.usuario"></strong> 
+                    Todo: <strong ng-bind="item.todo"></strong> 
+                    Finalizado: <strong ng-bind="item.finalizado ? 'Sim' : 'Não'"></strong>
                 </p>
-                <div class="row">
-                    <p class="text-primary col-md-3">
-                        Hi primary, {{name}}.
-                    </p>
-                    <p class="text-warning col-md-3">
-                        Hi warning, {{name}}.
-                    </p>
-                    <p class="text-success col-md-3">
-                        Hi success, {{name}}.
-                    </p>
-                    <p class="text-danger col-md-3">
-                        Hi danger, {{name}}.
-                    </p>
-                </div>
-                
-                <button ng-click="listar()" class="btn btn-primary">Listar</button>
-                
-                <div class="row">
-                    <p ng-repeat="item in todos" class="col-md-12">
-                        Usuário: <strong ng-bind="item.usuario"></strong>
-                        Todo: <strong ng-bind="item.todo"></strong>
-                        Finalizado: <strong ng-bind="item.finalizado ? 'Sim' : 'Não'"></strong>
-                    </p>  
-                </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
