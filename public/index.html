@@ -12,45 +12,18 @@
 
     <script src="js/vendor/jquery-2.2.2.min.js"></script>
     <script src="js/vendor/angular.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/angular-route.min.js"></script>
 
     <script src="js/todoApp.js"></script>
-    <script src="js/todoCtrl.js"></script>
+    <script src="js/todoCadastroCtrl.js"></script>
+    <script src="js/todoPesquisaCtrl.js"></script>
 </head>
 
-<body ng-controller="TodoCtrl">
+<body>
     <div class="row" style="padding-left: 15px;">
         <div class="col-md-12">
-            <h1>Hello MEAN</h1>
-            <p>
-                AngularJS with NodeJS is awesome!
-            </p>
-            <form role="form">
-                <div class="form-group">
-                    <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email">
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd">
-                </div>
-                <div class="checkbox">
-                    <label>
-                    <input type="checkbox"> Finalizado</label>
-                </div>
-                
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-
-            <button ng-click="listar()" class="btn btn-primary">Listar</button>
-
-            <div class="row">
-                <p ng-repeat="item in todos" class="col-md-12">
-                    Usuário: <strong ng-bind="item.usuario"></strong> 
-                    Todo: <strong ng-bind="item.todo"></strong> 
-                    Finalizado: <strong ng-bind="item.finalizado ? 'Sim' : 'Não'"></strong>
-                </p>
-            </div>
+            
+            <div ng-view></div>
         </div>
     </div>
 </body>

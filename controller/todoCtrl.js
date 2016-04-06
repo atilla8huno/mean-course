@@ -23,6 +23,8 @@
      * Salva os TODOs default
      */
     function salvarTodosDefault(request, response) {
+        console.log('SALVAR TODOS DEFAULT');
+        
         var todosDefault = [
             { usuario: 'atilla', todo: 'Novo todo 1', finalizado: false },
             { usuario: 'atilla', todo: 'Novo todo 2', finalizado: false },
@@ -43,7 +45,9 @@
      * URI: '/api/todo/:id
      */
     function excluirTodoPorId(request, response) {
-        Todo.findByIdAndDelete(request.body.id, function(err) {
+        console.log('EXCLUIR POR ID');
+        
+        Todo.findByIdAndRemove(request.params.id, function(err) {
             // verifica se houve um problema e dispara a exception
             if (err) throw err;
             
@@ -58,7 +62,9 @@
      * URI: '/api/todo
      */
     function salvarOuAtualizarTodo(request, response) {
-        if (request.body.id) {
+        console.log('SALVAR OU ATUALIZAR');
+        
+        if (request.body._id) {
             atualizarTodo(request, response);
         } else {
             salvarTodo(request, response);
@@ -69,6 +75,8 @@
      * Salva o TODO
      */
     function salvarTodo(request, response) {
+        console.log('SALVAR TODO');
+        
         var todo = Todo({
             usuario: request.body.usuario,
             todo: request.body.todo,
@@ -89,13 +97,15 @@
      * Atualiza o TODO
      */
     function atualizarTodo(request, response) {
+        console.log('ATUALIZAR TODO');
+        
         var todo = {
             usuario: request.body.usuario,
             todo: request.body.todo,
             finalizado: request.body.finalizado
         };
         
-        Todo.findByIdAndUpdate(request.body.id, todo, function(err, result) {
+        Todo.findByIdAndUpdate(request.body._id, todo, function(err, result) {
             // verifica se houve um problema e dispara a exception
             if (err) throw err;
             
@@ -110,6 +120,8 @@
      * URI: '/api/todo/:id'
      */
     function getTodoPorId(request, response) {
+        console.log('CONSULTAR POR ID');
+        
         var criteria = {
             _id: request.params.id
         };
@@ -129,6 +141,8 @@
      * URI: '/api/todos/:usuario'
      */
     function getTodosPorUsername(request, response) {
+        console.log('CONSULTAR POR USUARIO');
+        
         var criteria = {
             usuario: request.params.usuario
         };

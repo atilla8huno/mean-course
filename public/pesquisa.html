@@ -1,0 +1,23 @@
+<div ng-controller="TodoPesquisaCtrl" class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="usuario">Usuário:</label>
+                <input ng-model="usuario" type="text" class="form-control" id="usuario">
+            </div>
+            
+            <button ng-click="listar()" type="button" class="btn btn-primary">Pesquisar</button>
+        </div>
+        
+        <div class="col-md-12">
+            <ul>
+                <li ng-repeat="todo in todos">
+                    <a href="#/todo/{{todo._id}}">{{todo._id}}</a>
+                    <span ng-bind="todo.usuario"></span>
+                    <span ng-bind="todo.finalizado ? 'Finalizado' : 'Não Finalizado'"></span>
+                    <p>{{todo.todo}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -11,9 +11,7 @@
     // setup express
     var app = express();
     // setup context-path da aplicação
-    var router = express.Router();
-    app.use('/todo-app', router);
-    router.use('/', express.static(__dirname + '/public'));
+    app.use('/', express.static(__dirname + '/public'));
 
     // setup body-parser
     // Configura os HTTPMessageConverters para consumir e produzir JSON
@@ -24,7 +22,7 @@
     mongoose.connect(config.getConnectionString());
 
     // setup dos EndPoints
-    todoCtrl(router);
+    todoCtrl(app);
 
     // setup server
     var port = process.env.PORT || 3000;       

@@ -1,0 +1,26 @@
+
+<div ng-controller="TodoCadastroCtrl" class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Cadastro de TODO</h1>
+            
+            <form role="form" ng-submit="salvar()">
+                <div class="form-group">
+                    <label for="usuario">Usuário:</label>
+                    <input ng-model="todo.usuario" type="text" class="form-control" id="usuario">
+                </div>
+                <div class="form-group">
+                    <label for="todo">TODO:</label>
+                    <input ng-model="todo.todo" type="text" class="form-control" id="todo">
+                </div>
+                <div class="checkbox">
+                    <label>
+                    <input ng-model="todo.finalizado" type="checkbox"> Finalizado</label>
+                </div>
+                
+                <button ng-click="salvar()" type="button" class="btn btn-default">Salvar</button>
+                <button ng-click="excluir()" type="button" class="btn btn-danger" ng-if="todo._id">Excluir</button>
+            </form>
+        </div>
+    </div>
+</div>
