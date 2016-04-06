@@ -1,0 +1,27 @@
+{
+  "name": "todo-app",
+  "homepage": "https://github.com/atilla8huno/mean-course",
+  "authors": [
+    "Atilla Barros <atilla8huno@gmail.com>"
+  ],
+  "description": "Todo APP - Gerenciamento de a fazeres",
+  "main": "js/todoApp.js",
+  "keywords": [
+    "todo",
+    "app"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "angular": "^1.5.3",
+    "angular-route": "^1.5.3",
+    "bootstrap": "^3.3.6"
+  }
+}
