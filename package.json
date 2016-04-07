@@ -4,8 +4,7 @@
   "description": "Fonte do curso de MEAN Stack",
   "main": "server.js",
   "scripts": {
-    "bower": "cd public && bower install",
-    "start": "node server.js"
+    "start": "cd public && bower install && cd .. && node server.js"
   },
   "repository": {
     "type": "git",
