@@ -10,22 +10,20 @@
         $scope.usuario = $routeParams.usuario;
         $scope.todos = null;
         $scope.alert = null;
+        $scope.loading = false;
         
         $scope.listar = function() {
+            $scope.loading = true;
             $http
                 .get('/api/todos/' + $scope.usuario)
                 .then(function (result) {
                     $scope.todos = result.data;
-                    
-                    $scope.alert = {
-                        type: 'alert-info',
-                        message: 'Exibindo TODOs do usuário ' + $scope.usuario,
-                        title: 'Info!'
-                    };
+                    $scope.loading = false;
+                    $scope.alert = null;
                 })
                 .catch(function (err) {
                     console.log(err);
-                    
+                    $scope.loading = false;
                     $scope.alert = {
                         type: 'alert-danger',
                         message: err.data,

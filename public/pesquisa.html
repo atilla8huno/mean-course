@@ -1,53 +1,52 @@
 <div ng-controller="TodoPesquisaCtrl" class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 panel panel-default">
-            <div class="panel-heading">
-                <b>Cadastro de TODO</b>
+    <div class="col-md-12 panel panel-default">
+        <div class="panel-heading">
+            <b>Cadastro de TODO</b>
+        </div>
+
+        <div class="panel-body">
+            <div class="col-md-12 alert {{alert.type}} fade in" ng-show="alert.message">
+                <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong ng-bind="alert.title"></strong> {{alert.message}}
+            </div>
+            
+            <div class="form-group">
+                <label for="usuario">Usuário:</label>
+                <input ng-model="usuario" type="text" class="form-control" id="usuario">
             </div>
 
-            <div class="panel-body">
-                <div class="col-md-12 alert {{alert.type}} fade in" ng-show="alert.message">
-                    <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong>{{alert.title}}</strong> {{alert.message}}
-                </div>
-                
-                <div class="form-group">
-                    <label for="usuario">Usuário:</label>
-                    <input ng-model="usuario" type="text" class="form-control" id="usuario">
-                </div>
-
-                <button ng-click="listar()" type="button" class="btn btn-primary">Pesquisar</button>
-                <button ng-click="limpar()" type="button" class="btn btn-default">Limpar</button>
-                
-                <div class="row" ng-if="todos">
-                    <div class="col-md-12 table-responsive">
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th style="width: 20%;">ID</th>
-                                    <th style="width: 10%;">Usuário</th>
-                                    <th style="width: 60%;">TODO</th>
-                                    <th style="width: 10%;">Finalizado</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="todo in getTodos()">
-                                    <td>
-                                        <a href="#/todo/{{todo._id}}">{{todo._id}}</a>
-                                    </td>
-                                    <td>
-                                        <span ng-bind="todo.usuario"></span>
-                                    </td>
-                                    <td>
-                                        <p><span ng-bind="todo.todo"></span></p>
-                                    </td>
-                                    <td>
-                                        <span ng-bind="todo.finalizado ? 'Finalizado' : 'Não Finalizado'"></span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <button ng-click="listar()" type="button" class="btn btn-primary" 
+                    ladda="loading" data-style="expand-right">Pesquisar</button>
+            <button ng-click="limpar()" type="button" class="btn btn-default">Limpar</button>
+            
+            <div class="row" ng-if="todos">
+                <div class="col-md-12 table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">ID</th>
+                                <th style="width: 10%;">Usuário</th>
+                                <th style="width: 60%;">TODO</th>
+                                <th style="width: 10%;">Finalizado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="todo in getTodos()">
+                                <td>
+                                    <a href="#/todo/{{todo._id}}">{{todo._id}}</a>
+                                </td>
+                                <td>
+                                    <span ng-bind="todo.usuario"></span>
+                                </td>
+                                <td>
+                                    <p><span ng-bind="todo.todo"></span></p>
+                                </td>
+                                <td>
+                                    <span ng-bind="todo.finalizado ? 'Finalizado' : 'Não Finalizado'"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

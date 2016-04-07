@@ -10,6 +10,8 @@
         $scope.id = $routeParams.id;
         $scope.todo = { finalizado: false };
         $scope.alert = null;
+        $scope.loadingSave = false;
+        $scope.loadingDelete = false;
         
         $scope.buscarPorId = function() {
             $http
@@ -17,11 +19,7 @@
                 .then(function (result) {
                     $scope.todo = result.data;
 
-                    $scope.alert = {
-                        type: 'alert-info',
-                        message: 'TODO do usuário ' + $scope.todo.usuario,
-                        title: 'Info!'
-                    };
+                    $scope.alert = null;
                 })
                 .catch(function (err) {
                     console.log(err);
@@ -35,20 +33,21 @@
         }
         
         $scope.salvar = function() {
+            $scope.loadingSave = true;
             $http
                 .post('/api/todo', $scope.todo)
                 .then(function (result) {
                     console.log(result);
-                    
+                    $scope.loadingSave = false;
                     $scope.alert = {
-                        type: 'alert-success',
+                        type: 'alert-info',
                         message: result.data,
                         title: 'Tudo certo!'
                     };
                 })
                 .catch(function (err) {
                     console.log(err);
-                    
+                    $scope.loadingSave = false;
                     $scope.alert = {
                         type: 'alert-danger',
                         message: err.data,
@@ -58,13 +57,14 @@
         }
         
         $scope.excluir = function() {
+            $scope.loadingDelete = true;
             $http
                 .delete('/api/todo/' + $scope.todo._id)
                 .then(function (result) {
                     console.log(result);
-                    
+                    $scope.loadingDelete = false;
                     $scope.alert = {
-                        type: 'alert-success',
+                        type: 'alert-info',
                         message: result.data,
                         title: 'Tudo certo!'
                     };
@@ -73,7 +73,7 @@
                 })
                 .catch(function (err) {
                     console.log(err);
-                    
+                    $scope.loadingDelete = false;
                     $scope.alert = {
                         type: 'alert-danger',
                         message: err.data,
@@ -85,6 +85,8 @@
         $scope.limpar = function() {
             $scope.todo = null;
             $scope.alert = null;
+            $scope.loadingSave = false;
+            $scope.loadingDelete = false;
         }
         
         if ($scope.id) {

@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('TodoApp', ['ngRoute']);
+    angular.module('TodoApp', ['ngRoute', 'angular-ladda']);
 
     angular.module('TodoApp').config(['$routeProvider',
         function($routeProvider) {
