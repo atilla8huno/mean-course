@@ -1,26 +1,39 @@
 
 <div ng-controller="TodoCadastroCtrl" class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-            <h1>Cadastro de TODO</h1>
+        <div class="col-md-12 panel panel-default">
+            <div class="panel-heading">
+                <b>Cadastro de TODO</b>
+            </div>
             
-            <form role="form" ng-submit="salvar()">
-                <div class="form-group">
-                    <label for="usuario">Usuário:</label>
-                    <input ng-model="todo.usuario" type="text" class="form-control" id="usuario">
-                </div>
-                <div class="form-group">
-                    <label for="todo">TODO:</label>
-                    <input ng-model="todo.todo" type="text" class="form-control" id="todo">
-                </div>
-                <div class="checkbox">
-                    <label>
-                    <input ng-model="todo.finalizado" type="checkbox"> Finalizado</label>
+            <div class="panel-body">
+                <div class="alert {{alert.type}} fade in" ng-show="alert.message">
+                    <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>{{alert.title}}</strong> {{alert.message}}
                 </div>
                 
-                <button ng-click="salvar()" type="button" class="btn btn-default">Salvar</button>
-                <button ng-click="excluir()" type="button" class="btn btn-danger" ng-if="todo._id">Excluir</button>
-            </form>
+                <form role="form" ng-submit="salvar()">
+                    <div class="form-group">
+                        <label for="usuario">Usuário:</label>
+                        <input ng-model="todo.usuario" type="text" class="form-control" id="usuario">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="todo">TODO:</label>
+                        <input ng-model="todo.todo" type="text" class="form-control" id="todo">
+                    </div>
+                    
+                    <div class="checkbox">
+                        <label>
+                        <input ng-model="todo.finalizado" type="checkbox"> Finalizado</label>
+                    </div>
+                    
+                    <button ng-click="salvar()" type="button" class="btn btn-primary">Salvar</button>
+                    <button ng-click="excluir()" type="button" class="btn btn-danger" ng-if="todo._id">Excluir</button>
+                    <button ng-click="limpar()" type="button" class="btn btn-default">Limpar</button>
+                    <a href="#/todos/{{todo.usuario || 'admin'}}" class="btn btn-default">Listagem</a>
+                </form>
+            </div>
         </div>
     </div>
 </div>

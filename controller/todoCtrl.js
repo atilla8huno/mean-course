@@ -100,12 +100,13 @@
         console.log('ATUALIZAR TODO');
         
         var todo = {
+            _id: request.body._id,
             usuario: request.body.usuario,
             todo: request.body.todo,
             finalizado: request.body.finalizado
         };
         
-        Todo.findByIdAndUpdate(request.body._id, todo, function(err, result) {
+        Todo.findByIdAndUpdate(todo._id, todo, function(err, result) {
             // verifica se houve um problema e dispara a exception
             if (err) throw err;
             
