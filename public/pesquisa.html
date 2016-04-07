@@ -10,14 +10,16 @@
                 <strong ng-bind="alert.title"></strong> {{alert.message}}
             </div>
             
-            <div class="form-group">
-                <label for="usuario">Usuário:</label>
-                <input ng-model="usuario" type="text" class="form-control" id="usuario">
-            </div>
+            <form role="form" ng-submit="listar()">
+                <div class="form-group">
+                    <label for="usuario">Usuário:</label>
+                    <input ng-model="usuario" type="text" class="form-control" id="usuario">
+                </div>
 
-            <button ng-click="listar()" type="button" class="btn btn-primary" 
-                    ladda="loading" data-style="expand-right">Pesquisar</button>
-            <button ng-click="limpar()" type="button" class="btn btn-default">Limpar</button>
+                <button type="submit" class="btn btn-primary" ladda="loading"  
+                        data-style="expand-right">Pesquisar</button>
+                <button ng-click="limpar()" type="button" class="btn btn-default">Limpar</button>
+            </form>
             
             <div class="row" ng-if="todos">
                 <div class="col-md-12 table-responsive">
