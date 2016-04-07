@@ -14,32 +14,7 @@
         router.get('/api/todo/:id', getTodoPorId);
         router.post('/api/todo', salvarOuAtualizarTodo);
         router.delete('/api/todo/:id', excluirTodoPorId);
-        
-        // setup inicial
-        router.get('/api/setup', salvarTodosDefault);
     }
-
-    /**
-     * Salva os TODOs default
-     */
-    function salvarTodosDefault(request, response) {
-        console.log('SALVAR TODOS DEFAULT');
-        
-        var todosDefault = [
-            { usuario: 'atilla', todo: 'Novo todo 1', finalizado: false },
-            { usuario: 'atilla', todo: 'Novo todo 2', finalizado: false },
-            { usuario: 'atilla', todo: 'Novo todo 3', finalizado: false },
-            { usuario: 'atilla', todo: 'Novo todo 4', finalizado: false }
-        ];
-        
-        Todo.create(todosDefault, function(err, todos) {
-            // verifica se houve um problema e dispara a exception
-            if (err) throw err;
-            
-            response.send(todos);
-        });
-    }
-
     /**
      * EndPoint que exclui o TODO
      * URI: '/api/todo/:id
