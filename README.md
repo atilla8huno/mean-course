@@ -15,7 +15,7 @@ Workspace global:
 - npm install bower -g
 
 Workspace dev:
-- npm inti
+- npm init
 - npm install express --save-dev
 - npm install mongoose --save-dev
 - npm install body-parser --save-dev
