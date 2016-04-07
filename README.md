@@ -26,3 +26,4 @@ Bower:
 - bower install bootstrap --save-dev
 - bower install angular --save-dev
 - bower install angular-route --save-dev
+- bower install angular-ladda --save-dev
