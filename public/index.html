@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="TodoApp">
+<html ng-app="TodoApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Todo App</title>
 
-    <title>Todo App</title>
+        <!-- CSS Vendor -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/ladda/dist/ladda-themeless.min.css">
+        
+        <!-- CSS App -->
+        <link rel="stylesheet" href="css/general.css">
 
-    <!-- CSS Vendor -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/ladda/dist/ladda-themeless.min.css">
-    
-    <!-- CSS App -->
+        <!-- JS Vendor -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/ladda/dist/spin.min.js"></script>
+        <script src="bower_components/ladda/dist/ladda.min.js"></script>
+        <script src="bower_components/angular-ladda/dist/angular-ladda.min.js"></script>
 
-    <!-- JS Vendor -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-route/angular-route.min.js"></script>
-    <script src="bower_components/ladda/dist/spin.min.js"></script>
-    <script src="bower_components/ladda/dist/ladda.min.js"></script>
-    <script src="bower_components/angular-ladda/dist/angular-ladda.min.js"></script>
+        <!-- JS App -->
+        <script src="js/todoApp.js"></script>
+        <script src="js/todoCadastroCtrl.js"></script>
+        <script src="js/todoPesquisaCtrl.js"></script>
+    </head>
 
-    <!-- JS App -->
-    <script src="js/todoApp.js"></script>
-    <script src="js/todoCadastroCtrl.js"></script>
-    <script src="js/todoPesquisaCtrl.js"></script>
-</head>
-
-<body>
-    <div class="row" style="padding: 15px;">
-        <div class="col-md-12">
-            
-            <div ng-view></div>
+    <body>
+        <div class="container-fluid padding-default">
+            <div class="col-md-12">
+                
+                <div ng-view></div>
+                
+            </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

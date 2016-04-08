@@ -31,8 +31,8 @@
                         data-style="expand-right">Salvar</button> <!-- veja ng-submit do form -->
                 <button ng-click="excluir()" type="button" ladda="loadingDelete" data-style="expand-right"
                         class="btn btn-danger" ng-if="todo._id">Excluir</button>
+                <a href="#/todos/{{todo.usuario || ''}}" class="btn btn-success">Pesquisar</a>
                 <button ng-click="limpar()" type="button" class="btn btn-default">Limpar</button>
-                <a href="#/todos/{{todo.usuario || ''}}" class="btn btn-default">Listagem</a>
             </form>
         </div>
     </div>
