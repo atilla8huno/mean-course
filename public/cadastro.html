@@ -32,7 +32,7 @@
                 <button ng-click="excluir()" type="button" ladda="loadingDelete" data-style="expand-right"
                         class="btn btn-danger" ng-if="todo._id">Excluir</button>
                 <button ng-click="limpar()" type="button" class="btn btn-default">Limpar</button>
-                <a href="#/todos/{{todo.usuario || 'admin'}}" class="btn btn-default">Listagem</a>
+                <a href="#/todos/{{todo.usuario || ''}}" class="btn btn-default">Listagem</a>
             </form>
         </div>
     </div>

@@ -10,6 +10,10 @@
                     templateUrl: 'pesquisa.html',
                     controller: 'TodoPesquisaCtrl'
                 }).
+                when('/todos', {
+                    templateUrl: 'pesquisa.html',
+                    controller: 'TodoPesquisaCtrl'
+                }).
                 when('/todo/:id', {
                     templateUrl: 'cadastro.html',
                     controller: 'TodoCadastroCtrl'

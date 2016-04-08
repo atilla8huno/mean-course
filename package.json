@@ -2,9 +2,9 @@
   "name": "mean-course",
   "version": "1.0.0",
   "description": "Fonte do curso de MEAN Stack",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "cd public && bower install && cd .. && node server.js"
+    "start": "cd public && bower install && cd .. && node index.js"
   },
   "repository": {
     "type": "git",
