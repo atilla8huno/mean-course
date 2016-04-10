@@ -23,7 +23,7 @@
                     controller: 'TodoCadastroCtrl'
                 }).
                 otherwise({
-                    redirectTo: '/todo'
+                    redirectTo: '/todos'
                 });
         }]);
 })();
