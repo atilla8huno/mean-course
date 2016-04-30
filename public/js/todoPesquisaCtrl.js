@@ -16,20 +16,22 @@
             $scope.loading = true;
             $http
                 .get('/api/todos/' + $scope.usuario)
-                .then(function (result) {
-                    $scope.todos = result.data;
-                    $scope.loading = false;
-                    $scope.alert = null;
-                })
-                .catch(function (err) {
-                    console.log(err);
-                    $scope.loading = false;
-                    $scope.alert = {
-                        type: 'alert-danger',
-                        message: err.data,
-                        title: 'Erro!'
-                    };
-                });
+                .then(
+                    function (result) {
+                        $scope.todos = result.data;
+                        $scope.loading = false;
+                        $scope.alert = null;
+                    }, 
+                    function (err) {
+                        console.log(err);
+                        $scope.loading = false;
+                        $scope.alert = {
+                            type: 'alert-danger',
+                            message: err.data,
+                            title: 'Erro!'
+                        };
+                    }
+                );
         }
         
         $scope.getTodos = function() {
