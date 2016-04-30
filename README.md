@@ -28,7 +28,9 @@ Bower:
 - bower install angular-route --save-dev
 - bower install angular-ladda --save-dev
 
-Instalação e Execução (na raiz do projeto, em ordem):
+Instalação e execução:
+- git clone https://github.com/atilla8huno/mean-course.git
+- cd mean-course
 - npm install bower -g
 - npm install
 - cd public
